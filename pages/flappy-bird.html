@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Flappy Bird</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+         <!--font and icons-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    </head>
+
+
+    <body>
+    
+        <header>
+            
+            <nav>
+                <ul>
+        
+                    <li><a class="main" href="../index.html">Acasă</a></li>
+                    <li class="dropdown-menu">
+                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                            <ul class="dropdown">
+                            <li><a href="pong.html">Pong</a></li>
+                            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+                            <li><a href="tetris.html">Tetris</a></li>
+                            <li><a href="breakout.html">Breakout</a></li>
+                            <li><a href="pacman.html">Pac-man</a></li>
+                        </ul>
+                    </li>
+        
+                    <li><a class="main" href="#">Contact</a></li>
+                    <li><a class="main" href="#">Bibliografie</a></li>    
+                </ul>
+            </nav>
+
+        </header>
+    
+        <main>
+            <h1>Flappy Bird</h1>
+
+            <section class="row left">
+                <div>
+                    <p>Fappy Bird este un joc pentru telefon care a fost lansat în 2013. Jocul a fost creat de Dong Nguyen, un designer de jocuri vietnamez, și a fost publicat de .GEARS Studios.
+                    <p>Jocul a devenit foarte popular, dar a fost dat jos de pe Appstore de către developer datorită criticilor tot mai mari la adresa dependenței sale. În ciuda acestui fapt, jocul are încă o mulțime de urmăritori și numeroase clone au fost dezvoltate în urma acestuia.
+                </div>
+
+                <div class="img-container">
+                    <img src="../assets/flappy-bird-ss.jpg" height="312px">
+                    <p>Captură de ecran a jocului original</p>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Gameplay</h2>
+                <p>
+                    Flappy Bird este un joc de tip arcade în care jucătorul controlează o pasăre care se mișcă în continuu spre dreapta, navigând o serie de conducte. Scopul jucătorului este acela de a ţine în aer pasărea, astfel încât aceasta să evite obstacolele ce-i vin din faţă. Jocul se termină când pasărea lovește o conductă sau pământul.
+                </p>
+            </section>
+
+            <section>
+                <h2>Concepte importante</h2>
+                <ol>
+                    <li>
+                        <h3>Game-loop</h3>
+                        <div class="column center">
+                            <div>
+                                <p>Un joc este, în teorie, un ciclu infinit. În fiecare iterație a ciclului, efectuăm următorii pași:</p>
+                                <ul class="sub-list">
+                                    <li>procesăm input-ul. Mai exact verificăm dacă utilizatorul a apăsat o tastă de pe tastatură, a mutat joystick-ul etc;</li>
+                                    <li>răspundem la input, actualizând tot ce depinde de input (ex: mișcăm caracterul). Față de majoritatea aplicațiilor însă, jocurile continuă să funcționeze chiar dacă utilizatorul nu a făcut nimic, așa că trebuie să actualizăm și ce nu depinde de input-ul jucătorului;</li>
+                                    <li>actualizăm ecranul, astfel încât jucătorul să poată vedea ce s-a schimbat în joc.</li>
+                                </ul>
+                            </div>
+                            <div class = "img-container">
+                                <img class="wide" src="../assets/game-loop.png">
+                            </div>
+                        </div>
+
+                    </li>
+                    
+                    <li>
+                        <h3>Parallax Scrolling</h3>
+                       <div class="">
+                            <p>
+                                Parallax Scrolling este o tehnică utilizată în jocuri video, unde elementele din prin-plan și cele din fundal se mișcă la viteze diferite pentru a crea iluzia de adâncime.
+                            </p>
+                            <p>
+                                Efectul este o tehnică comună utilizată în multe jocuri 2D side-scrolling, deoarece poate adăuga adâncime şi un sentiment de mişcare unui joc care altfel ar fi plat şi static. În Flappy Bird, utilizarea efectului de parallax ajută la crearea unei experienţe immersive pentru jucător şi face jocul mai atractiv din punct de vedere vizual.
+                            </p>
+                       </div>
+                    </li>
+                    <li>
+                        <h3>Generarea obstacolelor</h3>
+                        <p>Generarea aproape aleatorie a obstacolelor este unul dintre elementele cheie ale jocului, și motivul pentru care Flappy Bird a fost un joc așa de popular. De fiecare dată când începe un joc nou, jucătorul este confruntat de un set diferit de obstacole, iar imprevizibilitate și variație menține jucătoriul implicat.</p>
+                        <p>
+                        Obstacolele în Flappy Bird sunt niște perechi de conducte, care sunt generate în timp ce jucătorul progresează în joc. De fiecare dată când pasărea zboară printre conducte, altă pereche de conducte este generată astfel încât gaura dintre conducte să fie într-o poziție diferită.Poziția acestora nu este 100% aleatorie, ci este folosit un algoritm care se asigură că conductele sunt poziționate în așa fel încât să nu fie nici prea ușor, dar nici imposibil.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+
+               <div class="center"><a class="bttn-main" href="flappy-bird-game/flappy-bird-game.html">Deschide jocul</a></div>
+        </main>
+        
+        <footer>
+            ATESTAT 2022-2023
+        </footer>
+
+    </body>
+
+</html>

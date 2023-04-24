@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Breakout</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+         <!--font and icons-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    </head>
+
+
+    <body>
+    
+        <header>
+            
+            <nav>
+                <ul>
+        
+                    <li><a class="main" href="../index.html">Acasă</a></li>
+                    <li class="dropdown-menu">
+                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                            <ul class="dropdown">
+                            <li><a href="pong.html">Pong</a></li>
+                            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+                            <li><a href="tetris.html">Tetris</a></li>
+                            <li><a href="breakout.html">Breakout</a></li>
+                            <li><a href="pacman.html">Pac-man</a></li>
+                        </ul>
+                    </li>
+        
+                    <li><a class="main" href="#">Contact</a></li>
+                    <li><a class="main" href="#">Bibliografie</a></li>    
+                </ul>
+            </nav>
+
+        </header>
+    
+        <main>
+                <h1>Breakout</h1>
+
+                <section>
+                    <p>Breakout este unul dintre cele mai iconice jocuri video. Lansat pentru prima dată de compania Atari în anul 1976, acest joc a devenit rapid unul dintre cele mai populare jocuri video din acel timp. </p>
+                    <p>Fiind un pionier al genului de jocuri de tip "puzzle", Breakout a reușit să inspire o întreagă generație de jocuri similare. Chiar și după mai mult de patruzeci de ani de la lansarea sa, Breakout continuă să fie un joc popular și să își păstreze locul în istoria jocurilor video.</p>
+                    </section>
+
+                <section>
+                    <h2>Gameplay</h2>
+                    <p>Conceptul jocului Breakout este simplu: jucătorul controlează o platformă în partea de jos a ecranului, care trebuie să lovească o minge care se mișcă în sus și în jos pe ecran. Scopul este de a distruge toate blocurile care se află deasupra platformei, folosind mingea pentru a lovi și distruge fiecare bloc.</p>
+                    <p>Pe măsură ce jocul avansează, nivelurile devin tot mai dificile, cu blocuri care își schimbă culoarea și devin mai rezistente la lovituri. Jucătorii trebuie să fie rapizi și preciși pentru a trece de fiecare nivel și pentru a câștiga puncte suplimentare.</p>
+                </section>
+
+                <section>
+                    <h2>Concepte importante</h2>
+
+                    <p>Breakout, fiind un joc inspirat de Pong, are la baza acestuia aceleași concepte, însă are în plus unele inovații, care adaugă la complexitatea jocului.</p>
+
+                    <ol>
+
+                        <li>
+                            <h3>Generarea nivelelor</h3>
+                            <p> În loc să creăm fiecare nivel în parte, ne vom folosi de un algoritm de generare blocurilor pentru fiecare nivel. Există mai multe avantaje ale utilizării algoritmului de generare a nivelului față de crearea manuală a fiecărui nivel, cum ar fi eficiența, generarea automată a nivelelor fiind mult mai eficientă din punct de vedere al timpului și resurselor necesare decât crearea manuală a fiecărui nivel în parte, dar și variația, algoritmul fiind capabil să creeze o infinitate de nivele diferite, iar acest fapt ajută la menținerea interesului jucătorilor și la evitarea repetiției.
+                            <p> Pentru generarea nivelelor în jocul Breakout, este folosit un algoritm care începe prin definirea unor modele de blocuri globale și locale. Modelele globale se aplică la întregul nivel pentru a configura o formă specifică, cum ar fi o piramidă. Modelele locale se aplică pentru fiecare rând în parte și se referă la modul în care sunt dispuse blocurile în acel rând. Algoritmul alege aleatoriu numărul de rânduri și de coloane, iar apoi determină tier-ul maxim al blocurilor, ce depinde de nivelul actual. Pentru fiecare rând, se determină modelul folosit pentru generarea rândului respectiv, cum ar fi rânduri solide (toate culorile sunt identice), rânduri alternative (culorile se alternează), rânduri cu blocuri omise (fiecare al doilea bloc este omis), sau niciun bloc în acel rând. Culorile blocurilor sunt alese la întâmplare, astfel încât să corespundă cu modelul local ales.
+
+                        </li>
+
+                        <li>
+                            <h3>Power-ups</h3>
+                            <p>Una dintre cele mai importante inovații aduse de acest joc sunt power-up-urile. Power-up-urile in Breakout sunt obiecte care apar pe ecran si care pot fi colectate de catre jucator pentru a primi avantaje temporare in joc. Aceste power-up-uri au adaugat o noua dimensiune in joc, permitand jucatorilor sa isi personalizeze experienta si sa joace in feluri noi si interesante. Mai mult decât atât, power-up-urile au dat jucătorilor o mai mare motivație pentru a continua să joace, oferindu-le obiective noi și provocări. Dacă, în trecut, jucătorii puteau ajunge la un punct în care își pierdeau interesul pentru joc, acum power-up-urile îi țin captivați și îi motivează să continue să joace pentru a vedea ce alte surprize le mai rezervă jocul.</p>
+
+                            <p>Majoritatea power-up-urilor implementate de către mine sunt power-up-uri iconice pentru Breakout, care apar în aproape toate versiunile jocurilor. Printre acestea se numără power-up-ul care îți dă o viață în plus și power-up-ul care adaugă o bilă extra și face toate bilele mai puternice. Acest power-up permite jucătorului să aibă mai multe bile pe ecran în același timp, ceea ce face mai ușor distrugerea cărămizilor și crește șansele de a ajunge la nivelul următor . Nu în ultimul rând, am adăugat și power-up-ul care îți mărește temporar platforma, cu care jucătorii pot să acopere o zonă mai mare a ecranului, ceea ce face ca jocul să fie mult mai ușor și distractiv.</p>
+                            <p>Pe lângă power-up-urile clasice, am implementat două power-up-uri unice, care fac această versiune a jocului Breakout mult mai interesantă. Primul power-up adăugat este o versiune mai bună a power-up-ului care îți dă o minge extra și face mingile mai puternice. Pentru cinci secunde, de fiecare dată când o bilă lovește o cărămidă, apare o bilă în plus în locul cărămizii. Deoarece power-up-ul era prea puternic, a trebuit să limitez numărul de bile care pot apărea la maxim șase, deoarece nivelul se termina instant datorită numărului mare de mingi care apăreau. Celălalt power-up adăugat marchează o cărămidă, iar dacă acea cărămidă este distrusă, toate cărămizile de aceeași culoare vor fi distruse. Acest power-up este unul puternic, atât pentru primele niveluri, când cărămizile au aceeași culoare, cât și la nivelurile mai avansate, când trebuie să lovești de mai multe ori cărămizile pentru a fi distruse în totalitate, așa că acest power-up poate să apară doar o dată per nivel.</p>
+                        </li>
+                    </ol>
+                </section>
+
+               <div class="center"><a class="bttn-main" href="breakout-game/breakout-game.html">Deschide jocul</a></div>
+        </main>
+        
+        <footer>
+            ATESTAT 2022-2023
+        </footer>
+
+    </body>
+
+</html>

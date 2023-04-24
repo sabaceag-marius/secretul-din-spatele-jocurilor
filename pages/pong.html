@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Pong</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+         <!--font and icons-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    </head>
+
+
+    <body>
+    
+        <header>
+            
+            <nav>
+                <ul>
+        
+                    <li><a class="main" href="../index.html">Acasă</a></li>
+                    <li class="dropdown-menu">
+                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                            <ul class="dropdown">
+                            <li><a href="pong.html">Pong</a></li>
+                            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+                            <li><a href="tetris.html">Tetris</a></li>
+                            <li><a href="breakout.html">Breakout</a></li>
+                            <li><a href="pacman.html">Pac-man</a></li>
+                        </ul>
+                    </li>
+        
+                    <li><a class="main" href="#">Contact</a></li>
+                    <li><a class="main" href="#">Bibliografie</a></li>    
+                </ul>
+            </nav>
+
+        </header>
+    
+        <main>
+                <h1>Pong</h1>
+
+                <section class="row">
+                    <div class="left">
+                        <div>
+                            <p>Pong este un joc video de tip arcade care simulează un joc de tenis de masă, creat de Atari și lansat în anul 1972. Este unul dintre primele jocuri video de tip arcade; acesta a fost creat de Allan Alcorn ca un exercițiu de la co-fondatorul Atari Nolan Bushnell, dar Bushnell a fost surprins de calitatea jocului și a decis să lanseze jocul.
+                                <p>Pong a fost primul joc video care a avut parte de succes. Curând după lansarea jocului, multe companii au început să producă jocuri care imitau gameplay-ul acestuia. În cele din urmă, competitorii au început să lanseze  jocuri video care deviază de la formatul original al jocului, care a influențat Atari să treacă de Pong și să producă jocuri mai inovative, formând astfel industria jocurilor video.
+                        </div>
+                    </div> 
+                    <div class = "right img-container">
+                        <img src="../assets/Pong_game_on_TV.jpg">
+                        <p>Poză cu jocul original pe televizor</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Gameplay</h2>
+                    <p>Pong este un joc 2D care simulează un joc de tenis de masă. Jucătorii controelază paletele ca să paseze mingea de la unul la celălalt. Acesta se poate juca cu un alt jucător, care controlează paleta de pe partea opusă sau cu un AI. Scopul este să obții zece puncte înaintea adversarului, pe care le primești când celălalt jucător nu reusește să paseze mingea, aceasta trecând de paleta lui.
+                
+                </section>
+
+                <section>
+                    <h2>Concepte importante</h2>
+                    <ol class="custom-ol">
+                        
+                        <li>
+                            <h3>Sistemul de coordonate bidimensional</h3>
+                           <div class="row">
+                                <div class="left">
+                                    <p>Majoritatea jocurilor 2D au toate obiectele reprezentate în sistemul de coordonate bidimensional. În LOVE2D, acest sistem este puțin diferit de cel întâlnit în matematică, deoarece Y ia valori pozitive când este  sub origine și valori negative când este deasupra originii. Originea, în contextul jocurilor, este punctul din stânga sus al ecranului.</p>
+                                </div>
+                                
+                                <div class="right">
+                                    <div class="img-container">
+                                        <img src="../assets/2d-coord-system.png">
+                                        <p>Reprezentarea sistemului de coordonate in LOVE2D</p>
+                                    </div>
+                                </div>
+                           </div>
+                        </li>
+                        <li>
+                            <h3>Detectarea coliziunilor</h3>
+                            <p>Pentru detectarea coliziunilor dintre minge și palete sau marginile ecranului se folosește conceptul de Axis-Aligned Bounding Box (AABB). AABB-ul este un dreptunghi care cuprinde în întregime un obiect în spațiu, iar laturile dreptunghiului sunt aliniate cu axele de coordonate (dreptunghiurile nu pot fi rotite). Pentru determinarea poziției sau mărimii dreptunghiului, sunt folosite punctele de coordonate, lungimea și lățimea obiectului.</p>
+                            <p>În contextul jocurilor 2D, detectarea coliziunilor dintre 2 obiecte folosind AABB-urile se face verificând dace dreptunghiurile celor două obiecte se intersectează. Pentru a face asta, verificăm dacă valorile coordonatelor colțului din stânga sus al unui dreptunghi sunt mai mari decât valorile coordonatelor colțului din dreapta jos al celuilalt dreptunghi, și similar verificăm dacă valorile coordonatelor colțului din dreapta jos al unui dreptunghi sunt mai mici decât valorile colțului din stânga sus al celuilalt dreptunghi. Dacă ambele condiții sunt adevărate, atunci între cele 2 obiecte a avut loc o coliziune.</p>
+                        </li>
+
+                        <li>
+                            <div class="left">
+                                <h3>AI-ul</h3>
+                            <p>AI-ul,folosindu-se atât de coordonatele și mărimea paletei sale, cât și de coordonatele și viteza mingii, folosește un algoritm pentru a calcula unde mai exact se va afla mingea când ajunge la paleta AI-ului (este calculată doar coordonata y, din moment ce paleta AI-ului nu se poate mișca orizontal). Algoritmul funcționează astfel:</p>
+                            <ul>
+                                <li>AI-ul calculează cât timp îi va lua mingii să ajungă din poziția sa până la paletă, folosind ecuația vitezei și viteza mingii pe direcția x.</li>
+                                <li>Calculează coordonata y a mingii când ajunge la paletă folosind iar ecuația vitezei, timpul calculat și viteza pe direcția y.</li>
+                                <li>Deoarece coordonata calculată poate să depășească înălțimea ecranului, algoritmul adaugă repetat, iar apoi scade înălțimea ecranului din coordonata y până când aceasta este între 0 și înălțimea ecranului.</li>
+                                <li>
+                                    <p>
+                                        Nu în ultimul rând, se verifică dacă în total numărul de scăderi și adunări este impar, iar dacă această condiție este adevărată, coordonata finală a mingii este înălțimea ecranului, din care se scade coordonata y calculată. Această condiție ține cont de faptul că mingea se lovește de partea de sus sau de jos a ecranului, care schimbă direcția vitezei pe axa y.
+                                    </p>
+                                </li>
+                            </div>    
+                            </ul>
+                            <div class="img-container">
+                                <img src="../assets/pong-ai.png">
+                                <p>Dacă nu am executa ultimul pas, AI-ul ar crede că mingea va ajunge undeva deasupra ecranului</p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+               <div class="center"><a class="bttn-main" href="pong-game/pong-game.html">Deschide jocul</a></div>
+        </main>
+        
+        <footer>
+            ATESTAT 2022-2023
+        </footer>
+
+    </body>
+
+</html>

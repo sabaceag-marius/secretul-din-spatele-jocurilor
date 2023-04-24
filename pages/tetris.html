@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Tetris</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+         <!--font and icons-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    </head>
+
+
+    <body>
+    
+        <header>
+            
+            <nav>
+                <ul>
+        
+                    <li><a class="main" href="../index.html">Acasă</a></li>
+                    <li class="dropdown-menu">
+                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                            <ul class="dropdown">
+                            <li><a href="pong.html">Pong</a></li>
+                            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+                            <li><a href="tetris.html">Tetris</a></li>
+                            <li><a href="breakout.html">Breakout</a></li>
+                            <li><a href="pacman.html">Pac-man</a></li>
+                        </ul>
+                    </li>
+        
+                    <li><a class="main" href="#">Contact</a></li>
+                    <li><a class="main" href="#">Bibliografie</a></li>    
+                </ul>
+            </nav>
+
+        </header>
+    
+        <main>
+                <h1>Tetris</h1>
+
+                <section>
+                    <p>Tetris este un joc puzzle creat de programatorul rus Alexey Pajitnov în anul 1984. A fost publicat de mai multe companii, cel mai proeminent în timpul unei dispute în legătură cu drepturile jocului pe la sfârșitul anilor '80. Jocul a fost lansat initial pentru computerul personal Elektronika 60, dar a devenit popular pe scara larga dupa ce a fost preluat de compania de jocuri video Nintendo pentru consolele lor de jocuri. </p>
+                    <p>Tetris a devenit un fenomen global în anii '90, fiind disponibil pe o gamă largă de platforme de jocuri și fiind considerat unul dintre cele mai mari jocuri video din toate timpurile.</p>
+                    </section>
+
+                <section>
+                    <h2>Gameplay</h2>
+                    Scopul jocului este de a aranja piese de diferite forme geometric incepand de la partea de sus a ecranului si de a forma linii complete fara spatii. Cand o linie completa este formata, aceasta dispare, permitand jucatorului sa continue sa completeze alte linii. Daca piesele ajung la partea de sus a ecranului fara sa poata fi asezate intr-o linie, jocul se termina.
+                </section>
+
+                <section>
+                    <h2>Concepte importante</h2>
+                    <ol>
+                        
+                        <li>
+                            <h3>Reprezentarea și mișcarea pieselor</h3>
+                           <p>Piesele (numite și tetrominos) sunt blocurile folosite în toate jocurile Tetris. Aceste piese sunt formate din 4 pătrate, care sunt conectate ortogonal (pătratele au laturi comune, nu doar colțuri).</p>
+                           <p>Există 7 piese, care sunt denumite după literele din alfabet cu care seamănă:
+                            „I”, „O”, „L”, „J”, „S”, „Z” și „T”.</p>
+                            <p>Toate piesele au proprietatea că sunt formate din 4 pătrate, așa că am reprezentat fiecare tip de tetromino ca 4 coordonate. După aceea am ales un pătrat principal, care va avea coordonatele (0,0), iar restul pătratelor au coordonatele relative cu pătratul principal. Aceasta metotă face mișcarea pieselor și verificarea dacă piesele pot fi mișcate într-o anumită direcție foarte simplu: avem coordonatele piesei X și Y, și direcția în care dorim să ne mișcăm cu dirX și dirY. Pentru fiecare pătrat al tetromino-ului, verificăm dacă coordonatele piesei, adunate cu coordonatele direcției și coordonatele pătratului (X + dirX + coord PătratX, respectiv Y), reprezintă o coordonată validă, iar dacă pentru toate pătratele coordonatele sunt valide, putem efectua mișcarea.</p>
+                        </li>
+
+                        <li>
+                            <h3>Generarea pieselor</h3>
+                            <p> Generarea pieselor diferă de la o versiune de Tetris la alta. Cele două versiuni de Tetris implementate generează ordinea pieselor pe care le controlezi în moduri diferite.
+                            <p> Înainte de a observa modul în care sunt generate piesele, trebuie menționat că pentru fiecare tip de piesă o să atribuim un număr, după cum se observă în poză.
+                            
+                            <ol>
+                                <li>
+                                    <p>Versiunea clasică</p>
+                                    <p>Generarea ordinii pieselor în această versiune este foarte simplă, având nevoie doar de tipul ultimei piesei pe care ai controlat-o. După aceea, o să luăm un număr aleatoriu de la 1 la 8. Tipul piesei este numărul generat, însă dacă numărul generat este același cu tipul ultimei piesei sau numărul generat este 8, atunci generăm încă odată un număr de la 1 la 7, care va deveni tipul piesei, chiar dacă numărul generat este iarăși același cu tipul ultimei piese.</p>
+                                    <p>Chiar dacă această metodă de generare este simplă, pot apărea unele probleme, deoarece ținem cont doar de tipul ultimei piese. Spre exemplu, dacă ai nevoie de un anumit tip de piesă, există o șansă să nu fie generată piesa respectivă, și să pierzi jocul din acest motiv.</p>
+                                </li>
+
+                                <li>
+                                    <p>Versiunea modernă</p>
+                                    <p>Deoarece generarea în versiunea clasică nu este perfectă, versiunile moderne folosesc alte metodede generare a ordinii pieselor. Pentru a ne asigura că toate tipurile de piese vor fi generate frecvent, procedăm astfel: de fiecare dată când generăm un tip de piesă, ne asigurăm că nu am mai generat piesa înainte, iar după aceea o marcăm. Dacă toate tipurile de piese au fost generate și marcate, începem generarea de la început.
+                                    </p>
+                                    <p>Această metodă de generare este echivalentă cu generarea unei permutări. Există 7!, sau 5.040, permutări a șapte elemente, iar metoda de generare atribuie o probabilitate aproape egală fiecăruia dintre acestea, ceea ce face mult mai puțin probabil ca jucătorul să obțină o perioadă lungă fără o piesă dorită.
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <h3>Delay</h3>
+                            <p> În LOVE2D update(dt) este funcția care reprezintă game-loopul, aceasta fiind apelată în fiecare frame. Chiar dacă jocurile noastre sunt limitate la 60 de frame-uri pe secundă, funcția update() tot va fi apelată de un număr foarte mare de ori. Acest lucru este util pentru a ne asigura că jocurile rulează lin, însă, în unele cazuri, modificarea poziției unui caracter sau procesarea inputului în fiecare frame ne va da senzația că jocul se mișcă prea rapid. Din acest motiv, o să ne folosim de conceptul de delay.
+                            <p>Delay-ul (întârziere) este o perioadă de timp înainte de începerea unui eveniment. În crearea jocurilor, folosim delay-ul pentru a reduce frecvența sau viteza cu care anumite lucruri se întâmplă. Pentru Tetris am utilizat delay-ul în aceste moduri:
+                            <ul>
+                                <li>Procesarea inputului - dacă am procesa inputul în fiecare frame, atunci am putea mișca prea des piesele.</li>
+                                <li>Căderea pieselor - dacă am face ca piesele să cadă în fiecare frame, atunci jocul ar fi imposibil de jucat</li>
+                                <li>Pentru versiunea modernă a jocului, de fiecare dată când piesa pe care o controlezi nu poate să mai coboare, avem un delay înainte de a trece la următoarea piesă, în care mai putem roti și muta piesa</li>
+                            </ul>
+                            <p>Pentru simularea delay-ului în joc, am folosit o clasă numită "Timer". Clasa are două variabile: value, care memorează durata totală a delay-ului și  "timeElapsed", înițializată cu valoarea 0, care va fi utilizată pentru a urmări durata de timp scursă. În funcția update(dt), unde variabila dt reprezintă timpul scurs de la ultima apelare a funcției și a cărei valoare este adăugată la "timeElapsed". Dacă valoarea variabilei "timeElapsed" este mai mare decât durata totală, atunci a trecut timpul necesar pentru a realiza delay-ul.</p>             
+                        </li>
+                    </ol>
+                    
+                </section>
+
+               <div class="center"><a class="bttn-main" href="tetris-game/tetris-game.html">Deschide jocul</a></div>
+        </main>
+        
+        <footer>
+            ATESTAT 2022-2023
+        </footer>
+
+    </body>
+
+</html>

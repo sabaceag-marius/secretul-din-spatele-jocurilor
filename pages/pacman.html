@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Pac-man</title>
+        <link rel="stylesheet" href="../css/style.css">
+
+         <!--font and icons-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    </head>
+
+
+    <body>
+    
+        <header>
+            
+            <nav>
+                <ul>
+        
+                    <li><a class="main" href="../index.html">Acasă</a></li>
+                    <li class="dropdown-menu">
+                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                            <ul class="dropdown">
+                            <li><a href="pong.html">Pong</a></li>
+                            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+                            <li><a href="tetris.html">Tetris</a></li>
+                            <li><a href="breakout.html">Breakout</a></li>
+                            <li><a href="pacman.html">Pac-man</a></li>
+                        </ul>
+                    </li>
+        
+                    <li><a class="main" href="#">Contact</a></li>
+                    <li><a class="main" href="#">Bibliografie</a></li>    
+                </ul>
+            </nav>
+
+        </header>
+    
+        <main>
+                <h1>Pac-man</h1>
+
+                <section>
+                    <p>Într-o lume în care jocurile video sunt la ordinea zilei, un joc video arcade a reușit să rămână în memoria colectivă a oamenilor pentru aproape patru decenii. Pac-Man, un joc creat de compania japoneză Namco, a fost lansat pentru prima dată în 1980 și a devenit rapid un fenomen global.</p>
+                    <p>
+                        Dezvoltarea jocului a început la începutul anului 1979, în regia lui Toru Iwatani cu o echipă de nouă oameni. Iwatani a vrut să creeze un joc care să atragă atât femeile, cât și bărbații, deoarece majoritatea jocurilor video ale vremii aveau teme de război sau sport, dar și o audiență mai tânără, personajele din joc fiind drăguțe și colorate.
+                    </p>
+                    </section>
+
+                <section>
+                    <h2>Gameplay</h2>
+                    <p>
+                        Pac-Man este un joc simplu, dar extrem de distractiv. Scopul jocului este de a controla un personaj rotund și galben, numit Pac-Man, prin intermediul unui labirint, încercând să mănânce toate punctele și să evite fantomele care îl urmăresc.Cu cât jucătorul mănâncă mai multe puncte, cu atât jocul devine mai rapid și mai dificil, iar fantomele devin mai agresive. 
+                    </p>
+                    <p>
+                        Jucătorii trebuie să fie atenți și să găsească puterile speciale, cum ar fi pilulele mari, care fac fantomele vulnerabile și astfel Pac-Man le poate mânca.Jocul a fost o adevărată revoluție în industria jocurilor video, deoarece a introdus elemente de strategie și puzzle-uri într-un joc arcade.
+                    </p>
+                    </section>
+                    
+                <section>
+                    <h2>Concepte importante</h2>
+
+                    <p>Unul dintre principalele motive pentru popularitatea jocului Pac-Man este AI-ul (inteligența artificială) folosit pentru a controla fantomele. În timpul jocului, fantomele încearcă să prindă și să elimine personajul principal, Pac-Man. Pentru a face acest lucru, Toru Iwatani a oferit fiecărei fantome câte o "personalitate" diferită, deoarece acesta a considerat că Pac-Man ar fi fost un joc plictisitor dacă toate fantomele s-ar fi comportat la fel.</p>
+
+                    <p>
+                        În plus, AI-ul fantomelor a reprezentat o realizare impresionantă în domeniul jocurilor video la momentul lansării jocului. A fost una dintre primele aplicații de inteligență artificială într-un joc video și a demonstrat potențialul imens al acestei tehnologii pentru a crea experiențe noi și captivante pentru jucători.
+                    </p>
+
+                    <p>
+                        Chiar dacă fiecare fantomă are un AI diferit, înainte să putem discuta despre acestea, trebuie să analizăm elementele comune.
+                        O mare parte dintre mecanicile jocurilor folosesc conceptul de tile-uri, niște pătrate din care sunt formate ecranul. Ecranul jocului este un dreptunghi format din 28x36 de tile-uri,chiar dacă majoritatea nu pot fi accesate de Pac-Man sau de către fantome. Un lucru de menționat este faptul că sprite-urile fantomelor și ale lui Pac-man nu pot fi încadrate într-un singur tile, așa că tile-ul pe care acestea se află este determinat de tile-ul pe care centrul lor se află.
+                    </p>
+                        
+
+                    <div class="row left">
+
+                        <p>În majoritatea cazurilor, fantomele au câte un tile la care vor să ajungă, numit "target tile". Modul în care fantomele încearcă să se apropie de target tile-ul lor este unul foarte simplu, ce face complexitatea jocului și mai impresionantă. De fiecare dată când fantomele ajung la un tile nou, fantoma verifică toate tile-urile vecine, cu excepția tile-urilor care sunt blocate de pereții labirintului și tile-ul de unde a venit, deoarece fantomele nu își pot schimba direcția decât în unele cazuri speciale. Dintre tile-urile vecine valide, este trasă o dreaptă de la tile-urile valide și target tile și se alege tile-ul cu cea mai scurtă dreaptă.
+                        </p>
+                        <div class="img-container">
+                            <img src="../assets/pacman-tiles.png">
+                        </div>
+
+                    </div>
+
+                    
+                    <p>
+                            Fantomele sunt întotdeauna în unul dintre cele trei moduri posibile: Chase, Scatter, Frightened. În modul Scatter, fiecare fantomă are câte un target tile într-un colț al labirintului. Fantomele intră în modul Frightened când Pac-Man mănâncă un power-pellet. Toate fantomele devin albastre, se mișcă mai încet și pot fi mâncate de către Pac-Man. Acest mod este unul unic, deoarece este singurul mod în care fantomele nu au un target tile, acestea alegând o direcție aleatorie la fiecare intersecție. 
+                    </p>
+
+                    <p>
+                        Modul Chase este modul "principal" al jocului, deoarece în acest mod fantomele încearcă să ajungă la Pac-Man, însă AI-ul acestora calculează target tile-urile în moduri diferite.
+                    </p>
+
+                    <ol>
+                        <li>Blinky - fantoma roșie</li>
+
+
+                        <p>Blinky este prima fantomă care este văzută ca o amenințare, deoarece target tile-ul acesteia este tot timpul poziția lui Pac-Man. Acest lucru asigură că Blinky este întotdeauna direct în spatele lui Pac-Man, cu excepția cazului în care ia o cale ineficientă, datorită modului simplu în care fantomele încearcă să se apropie de target tile.</p>
+                        <p>Chiar dacă este cea mai simplă fantomă, Blinky are un mod special, numit "Cruise Elroy". Blinky intră în acest mod când numărul de puncte rămase în labirint este destul de mic, iar acest mod îl face să fie mai rapid și să-l urmărească tot timpul pe Pac-Man, și când este în modul Scatter.</p>
+
+                        <li>Pinky - fantoma roz</li>
+
+                        <p>Pinky încearcă să ajungă în fața ta, lucrând cu Blinky pentru a-l încolți pe Pac-Man.Pinky se comportă așa pentru că target tile-ul său nu este poziția lui Pac-Man. În schimb, target tile-ul este poziția lui Pac-man, la care adăugăm patru tile-uri Pac-în direcția în care Pac-Man se mișcă în prezent. (cu o singură excepție)</p>
+                        <p>Dacă Pac-Man se mișcă la stânga, target tile-ul lui Pinky va fi cu patru tile-ri la stânga lui Pac-Man. Dacă Pac-Man se mișcă la dreapta, targetul lui Pinky va fi patru la dreapta. Dacă Pac-Man se mișcă în jos, target tile-ul lui Pinky este cu patru piese mai jos. În cele din urmă, dacă Pac-Man se mișcă în sus, target tile-ul va fi cu patru tile-uri în sus <b>și</b> patru tile-uri la stânga. Acest rezultat interesant se datorează unei erori subtile în codul care calculează offset-ul lui Pinky față de Pac-Man. Această bucată de cod funcționează corect pentru celelalte trei cazuri, dar, atunci când Pac-Man se mișcă în sus, declanșează o eroare de overflow care include în mod eronat un offset la stânga egal ca distanță cu offsetul în sus.</p>
+
+                        <li>Inky - fantoma albastră</li>
+                        
+                        <p>Inky este cea mai imprevizibilă dintre fantome, deoarece uneori îl urmărește pe Pac-Man agresiv ca Blinky, iar alteori sare înaintea lui Pac-Man așa cum ar face Pinky. Acest fapt se datorează modului complex prin care este calculată poziția target tile-ului lui Inky, ce folosește atât poziția și direcția în care se mișcă Pac-Man, cât și poziția lui Blinky.</p>
+                        <div class="row">
+                            <div class="left">
+                            <p>Pentru a determina ținta lui Inky, trebuie mai întâi să stabilim un offset de două tile-uri de la poziția lui Pac-Man în direcția în care acesta se mișcă. Acum imaginați-vă că desenați un vector de la Blinky până la tile-ul determinat anterior, iar apoi dublați lungimea vectorului. Target tile-ul lui Inky este tile-ul către care indică acest nou vector extins. Acest algoritm al lui Inky îl va ține departe de Pac-Man atunci când Blinky este departe de Pac-Man, dar pe măsură ce Blinky se apropie, se va apropia și Inky.</p>
+    
+                            </div>
+    
+                            <div class="img-container right">
+                                <img src="../assets/pacman-inky.png">
+                            </div>
+                        </div>
+                
+                        <li>Clyde - fantoma portocalie</li>
+
+                        <div class = "row left">
+
+                            <div>
+                                <p>În modul Chase, target tile-ul lui Clyde se schimbă în funcție de cât de aproape este de Pac-Man. Mai întâi calculează distanța euclidiană dintre poziția lui și poziția lui Pac-Man. Dacă distanța dintre ele este de opt tile-uri sau mai mult, target tile-ul este poziția lui Pac-Man, ca și în cazul lui Blinky. Dacă distanța dintre ele este mai mică de opt tile-uri, totuși, Clyde își schimbă ținta pe target tile-ul din modul Scatter și se îndreaptă spre colțul său până când ajunge suficient de departe pentru a începe din nou să aibă poziția lui Pac-Man ca target. </p>
+                                <p>Clyde este destul de ușor de evitat odată ce înțelegi cum calculează target tile-ul.</p>
+                            </div>
+
+                            <div class="img-container">
+                                <img src="../assets/pacman-clyde.png" width = "300px">
+                                <p>În acest caz, Clyde este blocat într-o buclă nesfârșită (atâta timp cât Pac-Man rămâne acolo unde este). </p>
+                            </div>
+                        </div>
+
+                        
+
+
+                       
+
+                    </ol>
+
+                </section>
+
+               <div class="center"><a class="bttn-main" href="pacman-game/pacman-game.html">Deschide jocul</a></div>
+        </main>
+        
+        <footer>
+            ATESTAT 2022-2023
+        </footer>
+
+    </body>
+
+</html>
