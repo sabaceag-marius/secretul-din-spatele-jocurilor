@@ -21,7 +21,7 @@ a
 
 /*FONT SIZES*/
 
-p,div,span,section,li,ol,ul,a{
+p{
     font-size: 1.375rem;
 }
 
@@ -43,6 +43,11 @@ h2
     margin-bottom: 1rem;
 }
 
+h3{
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
 .bold
 {
     font-weight: 800;
@@ -54,11 +59,28 @@ p {
 
 /*custom ol*/
 
-.custom-ol li::marker{
+.custom-ol,.custom-ol-mini{
+
+    margin: 1rem 0 ;
+
+}
+
+.custom-ol-mini > li::marker{
     
 
-    font-weight: 500;
-    font-size: 1.4rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    color: rgb(var(--secondary),1);
+
+}
+.custom-ol > li::marker{
+    
+
+    font-weight: 800;
+    font-size: 1.75rem;
+
+    color: rgb(var(--main),0.8);
 
 }
 
@@ -124,20 +146,28 @@ nav a
     text-decoration: none;
     color: black;
     padding: 1em 0;
+    font-size: 1.2rem;
 }
 
 nav a.main
 {
-    font-size: 1.25em;
     background:linear-gradient(to right,rgb(var(--main)) 50%,#000 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    font-size: 1.5rem;
+    transition: 300ms ease-in;
 }
 
 nav a.main:hover
+{
+    background-position: 0 0;
+    transition: 500ms;
+}
+
+nav a.main.active
 {
     background-position: 0 0;
     transition: 500ms;
@@ -157,7 +187,76 @@ nav a.main:hover
 .dropdown li
 {
     position: static;
+    transition: 300ms ease-in;
+
+    background:linear-gradient(to right,rgb(var(--secondary)) 50%,rgb(var(--bg)) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
 }
+
+.dropdown li.active
+{
+    background-position: 0 0;
+}
+
+.dropdown li a {
+    
+    transition: 100ms ease-in;
+}
+
+.dropdown li:hover{
+    background-position: 0 0;
+}
+
+
+.dropdown li:hover a{
+
+    
+    color: rgba(var(--bg),1);
+    
+}
+
+/*
+
+.dropdown li:hover{
+
+    background-color: rgba(var(--main),.4);
+
+}
+
+.dropdown li:hover a{
+
+    color: rgba(var(--bg),1);
+    
+}
+
+.dropdown li::after{
+
+    content: "";
+
+    background-color: rgb(var(--secondary));
+
+    top: 0;
+    left: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    transition: 250ms ease-in;
+
+    transform: scale(0);
+    transform-origin: top left;
+}
+
+.dropdown li:hover::after{
+
+    transform: scale(1);
+    transform-origin: bottom right;
+
+}*/
 
 .dropdown a
 {
@@ -181,6 +280,7 @@ nav a.main:hover
 .dropdown-menu:hover .dropdown
 {
     transform: scale(1,1);
+    z-index: 1;
     display: block;
 }
 
@@ -311,6 +411,51 @@ img.wide{
     max-width: 600px;
 }
 
+.card-container{
+
+    display: flex;
+    gap: 4em;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title{
+    
+    top: 18.75rem;
+
+    width: 100%;
+    padding: 0 1rem;
+    position: relative;
+
+    color: rgba(var(--bg),0);
+
+    background:linear-gradient(to top,rgba(var(--secondary),1) 50%,rgba(0,0,0,0) 50%);
+    background-size: 100% 200%;
+    background-position: 0 0;
+
+    transition: 200ms ease-in;
+
+    visibility: hidden;
+    text-align: center;
+
+    padding: .5rem 0 ;
+
+}
+
+.card:hover .card-title{
+    
+    visibility: visible;
+    color: rgba(var(--bg),1);
+    background-position: 0 100%;
+}
+
+
 /*Disables the highlight for symbols*/
 .material-symbols-outlined::selection
 {
@@ -350,10 +495,10 @@ main{
     }
 }
 
-@media (max-width:1000px) {
+@media (max-width:1100px) {
 
     main{
-        width: 90%;
+        width: 75%;
     }
 
     .row
@@ -362,6 +507,17 @@ main{
     flex-direction: column;
     grid-gap: 25px 15px;
 }
+
+.card-container
+{
+    flex-direction: column;
+}
+}
+
+@media (max-width:800px){
+    p{
+        font-size: 1rem;
+    }
 }
 
 

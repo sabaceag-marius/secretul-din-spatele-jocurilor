@@ -26,7 +26,7 @@
         
                     <li><a class="main" href="../index.html">Acasă</a></li>
                     <li class="dropdown-menu">
-                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                        <a class="main active" href="jocuri.html" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
                             <ul class="dropdown">
                             <li><a href="pong.html">Pong</a></li>
                             <li><a href="flappy-bird.html">Flappy Bird</a></li>
@@ -36,8 +36,8 @@
                         </ul>
                     </li>
         
-                    <li><a class="main" href="#">Contact</a></li>
-                    <li><a class="main" href="#">Bibliografie</a></li>    
+                    <li><a class="main" href="contact.html">Contact</a></li>
+                    <li><a class="main" href="bibliografie.html">Bibliografie</a></li>    
                 </ul>
             </nav>
 
@@ -53,19 +53,19 @@
 
                 <section>
                     <h2>Gameplay</h2>
-                    Scopul jocului este de a aranja piese de diferite forme geometric incepand de la partea de sus a ecranului si de a forma linii complete fara spatii. Cand o linie completa este formata, aceasta dispare, permitand jucatorului sa continue sa completeze alte linii. Daca piesele ajung la partea de sus a ecranului fara sa poata fi asezate intr-o linie, jocul se termina.
+                    <p>Scopul jocului este de a aranja piese de diferite forme geometric incepand de la partea de sus a ecranului si de a forma linii complete fara spatii. Cand o linie completa este formata, aceasta dispare, permitand jucatorului sa continue sa completeze alte linii. Daca piesele ajung la partea de sus a ecranului fara sa poata fi asezate intr-o linie, jocul se termina.</p>
                 </section>
 
                 <section>
                     <h2>Concepte importante</h2>
-                    <ol>
+                    <ol class="custom-ol">
                         
                         <li>
                             <h3>Reprezentarea și mișcarea pieselor</h3>
                            <p>Piesele (numite și tetrominos) sunt blocurile folosite în toate jocurile Tetris. Aceste piese sunt formate din 4 pătrate, care sunt conectate ortogonal (pătratele au laturi comune, nu doar colțuri).</p>
                            <p>Există 7 piese, care sunt denumite după literele din alfabet cu care seamănă:
                             „I”, „O”, „L”, „J”, „S”, „Z” și „T”.</p>
-                            <p>Toate piesele au proprietatea că sunt formate din 4 pătrate, așa că am reprezentat fiecare tip de tetromino ca 4 coordonate. După aceea am ales un pătrat principal, care va avea coordonatele (0,0), iar restul pătratelor au coordonatele relative cu pătratul principal. Aceasta metotă face mișcarea pieselor și verificarea dacă piesele pot fi mișcate într-o anumită direcție foarte simplu: avem coordonatele piesei X și Y, și direcția în care dorim să ne mișcăm cu dirX și dirY. Pentru fiecare pătrat al tetromino-ului, verificăm dacă coordonatele piesei, adunate cu coordonatele direcției și coordonatele pătratului (X + dirX + coord PătratX, respectiv Y), reprezintă o coordonată validă, iar dacă pentru toate pătratele coordonatele sunt valide, putem efectua mișcarea.</p>
+                            <p>Toate piesele au proprietatea că sunt formate din 4 pătrate, așa că am reprezentat fiecare tip de tetromino ca 4 coordonate. După aceea am ales un pătrat principal, care va avea coordonatele (0,0), iar restul pătratelor au coordonatele relative cu pătratul principal. Aceasta metotă face mișcarea pieselor și verificarea dacă piesele pot fi mutate într-o anumită direcție foarte simplu: avem coordonatele piesei X și Y, și direcția în care dorim să ne mișcăm cu dirX și dirY. Pentru fiecare pătrat al tetromino-ului, verificăm dacă coordonatele piesei, adunate cu coordonatele direcției și coordonatele pătratului (X + dirX + coordonata X a pătratului, respectiv Y), reprezintă o coordonată validă, adică dacă nu există un alt pătrat pe coordonata aia, iar dacă pentru toate pătratele coordonatele sunt valide, putem efectua mișcarea.</p>
                         </li>
 
                         <li>
@@ -73,7 +73,7 @@
                             <p> Generarea pieselor diferă de la o versiune de Tetris la alta. Cele două versiuni de Tetris implementate generează ordinea pieselor pe care le controlezi în moduri diferite.
                             <p> Înainte de a observa modul în care sunt generate piesele, trebuie menționat că pentru fiecare tip de piesă o să atribuim un număr, după cum se observă în poză.
                             
-                            <ol>
+                            <ol class="custom-ol-mini">
                                 <li>
                                     <p>Versiunea clasică</p>
                                     <p>Generarea ordinii pieselor în această versiune este foarte simplă, având nevoie doar de tipul ultimei piesei pe care ai controlat-o. După aceea, o să luăm un număr aleatoriu de la 1 la 8. Tipul piesei este numărul generat, însă dacă numărul generat este același cu tipul ultimei piesei sau numărul generat este 8, atunci generăm încă odată un număr de la 1 la 7, care va deveni tipul piesei, chiar dacă numărul generat este iarăși același cu tipul ultimei piese.</p>
@@ -92,12 +92,12 @@
 
                         <li>
                             <h3>Delay</h3>
-                            <p> În LOVE2D update(dt) este funcția care reprezintă game-loopul, aceasta fiind apelată în fiecare frame. Chiar dacă jocurile noastre sunt limitate la 60 de frame-uri pe secundă, funcția update() tot va fi apelată de un număr foarte mare de ori. Acest lucru este util pentru a ne asigura că jocurile rulează lin, însă, în unele cazuri, modificarea poziției unui caracter sau procesarea inputului în fiecare frame ne va da senzația că jocul se mișcă prea rapid. Din acest motiv, o să ne folosim de conceptul de delay.
+                            <p> În LOVE2D, funcția update(dt) este funcția care reprezintă game-loopul, aceasta fiind apelată în fiecare frame. Chiar dacă jocurile noastre sunt limitate la 60 de frame-uri pe secundă, funcția update() tot va fi apelată de un număr foarte mare de ori. Acest lucru este util pentru a ne asigura că jocurile rulează lin, însă, în unele cazuri, modificarea poziției unui caracter sau procesarea inputului în fiecare frame ne va da senzația că jocul se mișcă prea rapid. Din acest motiv, o să ne folosim de conceptul de delay.
                             <p>Delay-ul (întârziere) este o perioadă de timp înainte de începerea unui eveniment. În crearea jocurilor, folosim delay-ul pentru a reduce frecvența sau viteza cu care anumite lucruri se întâmplă. Pentru Tetris am utilizat delay-ul în aceste moduri:
                             <ul>
-                                <li>Procesarea inputului - dacă am procesa inputul în fiecare frame, atunci am putea mișca prea des piesele.</li>
-                                <li>Căderea pieselor - dacă am face ca piesele să cadă în fiecare frame, atunci jocul ar fi imposibil de jucat</li>
-                                <li>Pentru versiunea modernă a jocului, de fiecare dată când piesa pe care o controlezi nu poate să mai coboare, avem un delay înainte de a trece la următoarea piesă, în care mai putem roti și muta piesa</li>
+                                <li><p>Procesarea inputului - dacă am procesa inputul în fiecare frame, atunci am putea mișca prea des piesele;</p></li>
+                                <li><p>Căderea pieselor - dacă am face ca piesele să cadă în fiecare frame, atunci jocul ar fi imposibil de jucat;</p></li>
+                                <li><p>Pentru versiunea modernă a jocului, de fiecare dată când piesa pe care o controlezi nu poate să mai coboare, avem un delay înainte de a trece la următoarea piesă, în care mai putem roti și muta piesa.</p></li>
                             </ul>
                             <p>Pentru simularea delay-ului în joc, am folosit o clasă numită "Timer". Clasa are două variabile: value, care memorează durata totală a delay-ului și  "timeElapsed", înițializată cu valoarea 0, care va fi utilizată pentru a urmări durata de timp scursă. În funcția update(dt), unde variabila dt reprezintă timpul scurs de la ultima apelare a funcției și a cărei valoare este adăugată la "timeElapsed". Dacă valoarea variabilei "timeElapsed" este mai mare decât durata totală, atunci a trecut timpul necesar pentru a realiza delay-ul.</p>             
                         </li>

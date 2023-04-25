@@ -26,7 +26,7 @@
         
                     <li><a class="main" href="../index.html">Acasă</a></li>
                     <li class="dropdown-menu">
-                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                        <a class="main active" href="jocuri.html" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
                             <ul class="dropdown">
                             <li><a href="pong.html">Pong</a></li>
                             <li><a href="flappy-bird.html">Flappy Bird</a></li>
@@ -36,8 +36,8 @@
                         </ul>
                     </li>
         
-                    <li><a class="main" href="#">Contact</a></li>
-                    <li><a class="main" href="#">Bibliografie</a></li>    
+                    <li><a class="main" href="contact.html">Contact</a></li>
+                    <li><a class="main" href="bibliografie.html">Bibliografie</a></li>    
                 </ul>
             </nav>
 
@@ -95,9 +95,9 @@
                                 <h3>AI-ul</h3>
                             <p>AI-ul,folosindu-se atât de coordonatele și mărimea paletei sale, cât și de coordonatele și viteza mingii, folosește un algoritm pentru a calcula unde mai exact se va afla mingea când ajunge la paleta AI-ului (este calculată doar coordonata y, din moment ce paleta AI-ului nu se poate mișca orizontal). Algoritmul funcționează astfel:</p>
                             <ul>
-                                <li>AI-ul calculează cât timp îi va lua mingii să ajungă din poziția sa până la paletă, folosind ecuația vitezei și viteza mingii pe direcția x.</li>
-                                <li>Calculează coordonata y a mingii când ajunge la paletă folosind iar ecuația vitezei, timpul calculat și viteza pe direcția y.</li>
-                                <li>Deoarece coordonata calculată poate să depășească înălțimea ecranului, algoritmul adaugă repetat, iar apoi scade înălțimea ecranului din coordonata y până când aceasta este între 0 și înălțimea ecranului.</li>
+                                <li><p>AI-ul calculează cât timp îi va lua mingii să ajungă din poziția sa până la paletă, folosind ecuația vitezei și viteza mingii pe direcția x.</p></li>
+                                <li><p>Calculează coordonata y a mingii când ajunge la paletă folosind iar ecuația vitezei, timpul calculat și viteza pe direcția y.</p></li>
+                                <li><p>Deoarece coordonata calculată poate să depășească înălțimea ecranului, algoritmul adaugă repetat, iar apoi scade înălțimea ecranului din coordonata y până când aceasta este între 0 și înălțimea ecranului.</p></li>
                                 <li>
                                     <p>
                                         Nu în ultimul rând, se verifică dacă în total numărul de scăderi și adunări este impar, iar dacă această condiție este adevărată, coordonata finală a mingii este înălțimea ecranului, din care se scade coordonata y calculată. Această condiție ține cont de faptul că mingea se lovește de partea de sus sau de jos a ecranului, care schimbă direcția vitezei pe axa y.
@@ -105,13 +105,14 @@
                                 </li>
                             </div>    
                             </ul>
-                            <div class="img-container">
-                                <img src="../assets/pong-ai.png">
-                                <p>Dacă nu am executa ultimul pas, AI-ul ar crede că mingea va ajunge undeva deasupra ecranului</p>
-                            </div>
                         </li>
                     </ol>
                 </section>
+
+                <div class="img-container">
+                    <img src="../assets/pong-ai.png">
+                    <p>Dacă nu am executa ultimul pas, AI-ul ar crede că mingea va ajunge undeva deasupra ecranului</p>
+                </div>
 
                <div class="center"><a class="bttn-main" href="pong-game/pong-game.html">Deschide jocul</a></div>
         </main>

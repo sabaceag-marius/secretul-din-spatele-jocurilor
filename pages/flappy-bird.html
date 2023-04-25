@@ -26,7 +26,7 @@
         
                     <li><a class="main" href="../index.html">Acasă</a></li>
                     <li class="dropdown-menu">
-                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                        <a class="main active" href="jocuri.html" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
                             <ul class="dropdown">
                             <li><a href="pong.html">Pong</a></li>
                             <li><a href="flappy-bird.html">Flappy Bird</a></li>
@@ -36,8 +36,8 @@
                         </ul>
                     </li>
         
-                    <li><a class="main" href="#">Contact</a></li>
-                    <li><a class="main" href="#">Bibliografie</a></li>    
+                    <li><a class="main" href="contact.html">Contact</a></li>
+                    <li><a class="main" href="bibliografie.html">Bibliografie</a></li>    
                 </ul>
             </nav>
 
@@ -68,16 +68,16 @@
 
             <section>
                 <h2>Concepte importante</h2>
-                <ol>
+                <ol class="custom-ol">
                     <li>
                         <h3>Game-loop</h3>
                         <div class="column center">
                             <div>
                                 <p>Un joc este, în teorie, un ciclu infinit. În fiecare iterație a ciclului, efectuăm următorii pași:</p>
                                 <ul class="sub-list">
-                                    <li>procesăm input-ul. Mai exact verificăm dacă utilizatorul a apăsat o tastă de pe tastatură, a mutat joystick-ul etc;</li>
-                                    <li>răspundem la input, actualizând tot ce depinde de input (ex: mișcăm caracterul). Față de majoritatea aplicațiilor însă, jocurile continuă să funcționeze chiar dacă utilizatorul nu a făcut nimic, așa că trebuie să actualizăm și ce nu depinde de input-ul jucătorului;</li>
-                                    <li>actualizăm ecranul, astfel încât jucătorul să poată vedea ce s-a schimbat în joc.</li>
+                                    <li><p>procesăm input-ul. Mai exact verificăm dacă utilizatorul a apăsat o tastă de pe tastatură, a mutat joystick-ul etc;</p></li>
+                                    <li><p>răspundem la input, actualizând tot ce depinde de input (ex: mișcăm caracterul). Față de majoritatea aplicațiilor însă, jocurile continuă să funcționeze chiar dacă utilizatorul nu a făcut nimic, așa că trebuie să actualizăm și ce nu depinde de input-ul jucătorului;</p></li>
+                                    <li><p>actualizăm ecranul, astfel încât jucătorul să poată vedea ce s-a schimbat în joc.</p></li>
                                 </ul>
                             </div>
                             <div class = "img-container">
@@ -100,9 +100,9 @@
                     </li>
                     <li>
                         <h3>Generarea obstacolelor</h3>
-                        <p>Generarea aproape aleatorie a obstacolelor este unul dintre elementele cheie ale jocului, și motivul pentru care Flappy Bird a fost un joc așa de popular. De fiecare dată când începe un joc nou, jucătorul este confruntat de un set diferit de obstacole, iar imprevizibilitate și variație menține jucătoriul implicat.</p>
+                        <p>Generarea aproape aleatorie a obstacolelor este unul dintre elementele cheie ale jocului, și motivul pentru care Flappy Bird a fost un joc așa de popular. De fiecare dată când începe un joc nou, jucătorul este confruntat de un set diferit de obstacole, iar imprevizibilitatea și variația menține jucătoriul implicat.</p>
                         <p>
-                        Obstacolele în Flappy Bird sunt niște perechi de conducte, care sunt generate în timp ce jucătorul progresează în joc. De fiecare dată când pasărea zboară printre conducte, altă pereche de conducte este generată astfel încât gaura dintre conducte să fie într-o poziție diferită.Poziția acestora nu este 100% aleatorie, ci este folosit un algoritm care se asigură că conductele sunt poziționate în așa fel încât să nu fie nici prea ușor, dar nici imposibil.
+                        Obstacolele în Flappy Bird sunt niște perechi de conducte, care sunt generate în timp ce jucătorul progresează în joc. De fiecare dată când pasărea zboară printre conducte, altă pereche de conducte este generată astfel încât gaura dintre conducte să fie într-o poziție diferită. Poziția acestora nu este 100% aleatorie, ci este folosit un algoritm care se asigură că conductele sunt poziționate în așa fel încât să nu fie nici prea ușor, dar nici imposibil.
                         </p>
                     </li>
                 </ol>

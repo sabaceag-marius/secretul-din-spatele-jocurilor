@@ -26,7 +26,7 @@
         
                     <li><a class="main" href="../index.html">Acasă</a></li>
                     <li class="dropdown-menu">
-                        <a class="main" href="#" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
+                        <a class="main active" href="jocuri.html" >Jocuri<span class="material-symbols-outlined">expand_more</span></a>
                             <ul class="dropdown">
                             <li><a href="pong.html">Pong</a></li>
                             <li><a href="flappy-bird.html">Flappy Bird</a></li>
@@ -36,8 +36,8 @@
                         </ul>
                     </li>
         
-                    <li><a class="main" href="#">Contact</a></li>
-                    <li><a class="main" href="#">Bibliografie</a></li>    
+                    <li><a class="main" href="contact.html">Contact</a></li>
+                    <li><a class="main" href="bibliografie.html">Bibliografie</a></li>    
                 </ul>
             </nav>
 
@@ -83,7 +83,7 @@
                         <p>În majoritatea cazurilor, fantomele au câte un tile la care vor să ajungă, numit "target tile". Modul în care fantomele încearcă să se apropie de target tile-ul lor este unul foarte simplu, ce face complexitatea jocului și mai impresionantă. De fiecare dată când fantomele ajung la un tile nou, fantoma verifică toate tile-urile vecine, cu excepția tile-urilor care sunt blocate de pereții labirintului și tile-ul de unde a venit, deoarece fantomele nu își pot schimba direcția decât în unele cazuri speciale. Dintre tile-urile vecine valide, este trasă o dreaptă de la tile-urile valide și target tile și se alege tile-ul cu cea mai scurtă dreaptă.
                         </p>
                         <div class="img-container">
-                            <img src="../assets/pacman-tiles.png">
+                            <img src="../assets/pacman-tiles.png" width = "300px">
                         </div>
 
                     </div>
@@ -97,19 +97,19 @@
                         Modul Chase este modul "principal" al jocului, deoarece în acest mod fantomele încearcă să ajungă la Pac-Man, însă AI-ul acestora calculează target tile-urile în moduri diferite.
                     </p>
 
-                    <ol>
-                        <li>Blinky - fantoma roșie</li>
+                    <ol class="custom-ol-mini">
+                        <li><p>Blinky - fantoma roșie</p></li>
 
 
                         <p>Blinky este prima fantomă care este văzută ca o amenințare, deoarece target tile-ul acesteia este tot timpul poziția lui Pac-Man. Acest lucru asigură că Blinky este întotdeauna direct în spatele lui Pac-Man, cu excepția cazului în care ia o cale ineficientă, datorită modului simplu în care fantomele încearcă să se apropie de target tile.</p>
                         <p>Chiar dacă este cea mai simplă fantomă, Blinky are un mod special, numit "Cruise Elroy". Blinky intră în acest mod când numărul de puncte rămase în labirint este destul de mic, iar acest mod îl face să fie mai rapid și să-l urmărească tot timpul pe Pac-Man, și când este în modul Scatter.</p>
 
-                        <li>Pinky - fantoma roz</li>
+                        <li><p>Pinky - fantoma roz</p></li>
 
                         <p>Pinky încearcă să ajungă în fața ta, lucrând cu Blinky pentru a-l încolți pe Pac-Man.Pinky se comportă așa pentru că target tile-ul său nu este poziția lui Pac-Man. În schimb, target tile-ul este poziția lui Pac-man, la care adăugăm patru tile-uri Pac-în direcția în care Pac-Man se mișcă în prezent. (cu o singură excepție)</p>
                         <p>Dacă Pac-Man se mișcă la stânga, target tile-ul lui Pinky va fi cu patru tile-ri la stânga lui Pac-Man. Dacă Pac-Man se mișcă la dreapta, targetul lui Pinky va fi patru la dreapta. Dacă Pac-Man se mișcă în jos, target tile-ul lui Pinky este cu patru piese mai jos. În cele din urmă, dacă Pac-Man se mișcă în sus, target tile-ul va fi cu patru tile-uri în sus <b>și</b> patru tile-uri la stânga. Acest rezultat interesant se datorează unei erori subtile în codul care calculează offset-ul lui Pinky față de Pac-Man. Această bucată de cod funcționează corect pentru celelalte trei cazuri, dar, atunci când Pac-Man se mișcă în sus, declanșează o eroare de overflow care include în mod eronat un offset la stânga egal ca distanță cu offsetul în sus.</p>
 
-                        <li>Inky - fantoma albastră</li>
+                        <li><p>Inky - fantoma albastră</p></li>
                         
                         <p>Inky este cea mai imprevizibilă dintre fantome, deoarece uneori îl urmărește pe Pac-Man agresiv ca Blinky, iar alteori sare înaintea lui Pac-Man așa cum ar face Pinky. Acest fapt se datorează modului complex prin care este calculată poziția target tile-ului lui Inky, ce folosește atât poziția și direcția în care se mișcă Pac-Man, cât și poziția lui Blinky.</p>
                         <div class="row">
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                 
-                        <li>Clyde - fantoma portocalie</li>
+                        <li><p>Clyde - fantoma portocalie</p></li>
 
                         <div class = "row left">
 
@@ -133,8 +133,8 @@
                             </div>
 
                             <div class="img-container">
-                                <img src="../assets/pacman-clyde.png" width = "300px">
-                                <p>În acest caz, Clyde este blocat într-o buclă nesfârșită (atâta timp cât Pac-Man rămâne acolo unde este). </p>
+                                <img src="../assets/pacman-clyde.png">
+                                <p>În acest caz, Clyde este blocat într-o buclă nesfârșită (atâta timp cât Pac-Man nu se mișcă). </p>
                             </div>
                         </div>
 
