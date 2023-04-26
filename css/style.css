@@ -532,6 +532,15 @@ main{
 }
 }
 
+@media (max-width:1000px) {
+    
+    .game
+    {
+        transform: scale(80%);
+    }
+
+}
+
 @media (max-width:800px){
     p{
         font-size: 1rem;
