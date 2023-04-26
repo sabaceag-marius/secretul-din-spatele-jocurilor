@@ -47,8 +47,17 @@
                 <h1>Breakout</h1>
 
                 <section>
-                    <p>Breakout este unul dintre cele mai iconice jocuri video. Lansat pentru prima dată de compania Atari în anul 1976, acest joc a devenit rapid unul dintre cele mai populare jocuri video din acel timp. </p>
-                    <p>Fiind un pionier al genului de jocuri de tip "puzzle", Breakout a reușit să inspire o întreagă generație de jocuri similare. Chiar și după mai mult de patruzeci de ani de la lansarea sa, Breakout continuă să fie un joc popular și să își păstreze locul în istoria jocurilor video.</p>
+                    <div class="row">
+                        <div class="left">
+                            <p>Breakout este unul dintre cele mai iconice jocuri video. Lansat pentru prima dată de compania Atari în anul 1976, acest joc a devenit rapid unul dintre cele mai populare jocuri video din acel timp. </p>
+                        <p>Fiind un pionier al genului de jocuri de tip "puzzle", Breakout a reușit să inspire o întreagă generație de jocuri similare. Chiar și după mai mult de patruzeci de ani de la lansarea sa, Breakout continuă să fie un joc popular și să își păstreze locul în istoria jocurilor video.</p>
+                        </div>
+
+                        <div class="img-container">
+                            <img src="../assets/breakout-afis.png">
+                            <p>Afiș original cu Breakout</p>
+                        </div>
+                    </div>
                     </section>
 
                 <section>
@@ -66,9 +75,13 @@
 
                         <li>
                             <h3>Generarea nivelelor</h3>
-                            <p> În loc să creăm fiecare nivel în parte, ne vom folosi de un algoritm de generare blocurilor pentru fiecare nivel. Există mai multe avantaje ale utilizării algoritmului de generare a nivelului față de crearea manuală a fiecărui nivel, cum ar fi eficiența, generarea automată a nivelelor fiind mult mai eficientă din punct de vedere al timpului și resurselor necesare decât crearea manuală a fiecărui nivel în parte, dar și variația, algoritmul fiind capabil să creeze o infinitate de nivele diferite, iar acest fapt ajută la menținerea interesului jucătorilor și la evitarea repetiției.
-                            <p> Pentru generarea nivelelor în jocul Breakout, este folosit un algoritm care începe prin definirea unor modele de blocuri globale și locale. Modelele globale se aplică la întregul nivel pentru a configura o formă specifică, cum ar fi o piramidă. Modelele locale se aplică pentru fiecare rând în parte și se referă la modul în care sunt dispuse blocurile în acel rând. Algoritmul alege aleatoriu numărul de rânduri și de coloane, iar apoi determină tier-ul maxim al blocurilor, ce depinde de nivelul actual. Pentru fiecare rând, se determină modelul folosit pentru generarea rândului respectiv, cum ar fi rânduri solide (toate culorile sunt identice), rânduri alternative (culorile se alternează), rânduri cu blocuri omise (fiecare al doilea bloc este omis), sau niciun bloc în acel rând. Culorile blocurilor sunt alese la întâmplare, astfel încât să corespundă cu modelul local ales.
+                            <p> În loc să creăm fiecare nivel în parte, ne vom folosi de un algoritm de generare blocurilor pentru fiecare nivel. Există mai multe avantaje ale utilizării algoritmului de generare a nivelului față de crearea manuală a fiecărui nivel, cum ar fi eficiența, generarea automată a nivelelor fiind mult mai eficientă din punct de vedere al timpului și resurselor necesare decât crearea manuală a fiecărui nivel în parte, dar și variația, algoritmul fiind capabil să creeze o infinitate de nivele diferite, iar acest fapt ajută la menținerea interesului jucătorilor și la evitarea repetiției.</p>
+                            <p> Pentru generarea nivelelor în jocul Breakout, este folosit un algoritm care începe prin definirea unor modele de blocuri globale și locale. Modelele globale se aplică la întregul nivel pentru a configura o formă specifică, cum ar fi o piramidă. Modelele locale se aplică pentru fiecare rând în parte și se referă la modul în care sunt dispuse blocurile în acel rând. Algoritmul alege aleatoriu numărul de rânduri și de coloane, iar apoi determină tier-ul maxim al blocurilor, ce depinde de nivelul actual. Pentru fiecare rând, se determină modelul folosit pentru generarea rândului respectiv, cum ar fi rânduri solide (toate culorile sunt identice), rânduri alternative (culorile se alternează), rânduri cu blocuri omise (fiecare al doilea bloc este omis), sau niciun bloc în acel rând. Culorile blocurilor sunt alese la întâmplare, astfel încât să corespundă cu modelul local ales.</p>
 
+                            <div class="img-container">
+                                <img class="wide" src="../assets/breakout-levelgenerator.png">
+                                <p>Exemple de nivele generate</p>
+                            </div>
                         </li>
 
                         <li>

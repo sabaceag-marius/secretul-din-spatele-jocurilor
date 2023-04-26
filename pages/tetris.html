@@ -47,8 +47,19 @@
                 <h1>Tetris</h1>
 
                 <section>
-                    <p>Tetris este un joc puzzle creat de programatorul rus Alexey Pajitnov în anul 1984. A fost publicat de mai multe companii, cel mai proeminent în timpul unei dispute în legătură cu drepturile jocului pe la sfârșitul anilor '80. Jocul a fost lansat initial pentru computerul personal Elektronika 60, dar a devenit popular pe scara larga dupa ce a fost preluat de compania de jocuri video Nintendo pentru consolele lor de jocuri. </p>
-                    <p>Tetris a devenit un fenomen global în anii '90, fiind disponibil pe o gamă largă de platforme de jocuri și fiind considerat unul dintre cele mai mari jocuri video din toate timpurile.</p>
+                    <div class="row">
+
+                        <div class="left">
+                            <p>Tetris este un joc puzzle creat de programatorul rus Alexey Pajitnov în anul 1984. A fost publicat de mai multe companii, cel mai proeminent în timpul unei dispute în legătură cu drepturile jocului pe la sfârșitul anilor '80. Jocul a fost lansat initial pentru computerul personal Elektronika 60, dar a devenit popular pe scara larga dupa ce a fost preluat de compania de jocuri video Nintendo pentru consolele lor de jocuri. </p>
+                            <p>Tetris a devenit un fenomen global în anii '90, fiind disponibil pe o gamă largă de platforme de jocuri și fiind considerat unul dintre cele mai mari jocuri video din toate timpurile.</p>
+                        </div>
+
+                        <div class="right img-container">
+                            <img src="../assets/tetris-poster.jpg">
+                            <p>Poster cu Tetris</p>
+                        </div>
+
+                    </div>
                     </section>
 
                 <section>
@@ -62,10 +73,14 @@
                         
                         <li>
                             <h3>Reprezentarea și mișcarea pieselor</h3>
-                           <p>Piesele (numite și tetrominos) sunt blocurile folosite în toate jocurile Tetris. Aceste piese sunt formate din 4 pătrate, care sunt conectate ortogonal (pătratele au laturi comune, nu doar colțuri).</p>
-                           <p>Există 7 piese, care sunt denumite după literele din alfabet cu care seamănă:
-                            „I”, „O”, „L”, „J”, „S”, „Z” și „T”.</p>
+                           <p>Piesele (numite și tetrominos) sunt blocurile folosite în toate jocurile Tetris. Aceste piese sunt formate din 4 pătrate, care sunt conectate ortogonal (pătratele trebuie să aibă laturi comune).</p>
                             <p>Toate piesele au proprietatea că sunt formate din 4 pătrate, așa că am reprezentat fiecare tip de tetromino ca 4 coordonate. După aceea am ales un pătrat principal, care va avea coordonatele (0,0), iar restul pătratelor au coordonatele relative cu pătratul principal. Aceasta metotă face mișcarea pieselor și verificarea dacă piesele pot fi mutate într-o anumită direcție foarte simplu: avem coordonatele piesei X și Y, și direcția în care dorim să ne mișcăm cu dirX și dirY. Pentru fiecare pătrat al tetromino-ului, verificăm dacă coordonatele piesei, adunate cu coordonatele direcției și coordonatele pătratului (X + dirX + coordonata X a pătratului, respectiv Y), reprezintă o coordonată validă, adică dacă nu există un alt pătrat pe coordonata aia, iar dacă pentru toate pătratele coordonatele sunt valide, putem efectua mișcarea.</p>
+
+                            <div class="right img-container">
+                                <img src="../assets/tetris-tetrominos.png">
+                                <p>Există 7 piese, care sunt denumite după literele din alfabet cu care seamănă:
+                                    „I”, „J”, „L”, „O”, „S”, „T” și „Z”.</p>
+                            </div>
                         </li>
 
                         <li>
@@ -76,8 +91,17 @@
                             <ol class="custom-ol-mini">
                                 <li>
                                     <p>Versiunea clasică</p>
-                                    <p>Generarea ordinii pieselor în această versiune este foarte simplă, având nevoie doar de tipul ultimei piesei pe care ai controlat-o. După aceea, o să luăm un număr aleatoriu de la 1 la 8. Tipul piesei este numărul generat, însă dacă numărul generat este același cu tipul ultimei piesei sau numărul generat este 8, atunci generăm încă odată un număr de la 1 la 7, care va deveni tipul piesei, chiar dacă numărul generat este iarăși același cu tipul ultimei piese.</p>
-                                    <p>Chiar dacă această metodă de generare este simplă, pot apărea unele probleme, deoarece ținem cont doar de tipul ultimei piese. Spre exemplu, dacă ai nevoie de un anumit tip de piesă, există o șansă să nu fie generată piesa respectivă, și să pierzi jocul din acest motiv.</p>
+                                    <div class="row">
+
+                                        <div class="left">
+                                            <p>Generarea ordinii pieselor în această versiune este foarte simplă, având nevoie doar de tipul ultimei piesei pe care ai controlat-o. După aceea, o să luăm un număr aleatoriu de la 1 la 8. Tipul piesei este numărul generat, însă dacă numărul generat este același cu tipul ultimei piesei sau numărul generat este 8, atunci generăm încă odată un număr de la 1 la 7, care va deveni tipul piesei, chiar dacă numărul generat este iarăși același cu tipul ultimei piese.</p>
+                                            <p>Chiar dacă această metodă de generare este simplă, pot apărea unele probleme, deoarece ținem cont doar de tipul ultimei piese. Spre exemplu, dacă ai nevoie de un anumit tip de piesă, există o șansă să nu fie generată piesa respectivă, și să pierzi jocul din acest motiv.</p>
+                                        </div>
+                                        <div class="img-container right">
+                                            <img src="../assets/tetris-rng.png">
+                                            <p>Dacă ești destul de "norocos", poți să primești la nesfârșit aceeași piesă</p>
+                                        </div>
+                                    </div>
                                 </li>
 
                                 <li>

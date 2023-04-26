@@ -47,10 +47,23 @@
                 <h1>Pac-man</h1>
 
                 <section>
-                    <p>Într-o lume în care jocurile video sunt la ordinea zilei, un joc video arcade a reușit să rămână în memoria colectivă a oamenilor pentru aproape patru decenii. Pac-Man, un joc creat de compania japoneză Namco, a fost lansat pentru prima dată în 1980 și a devenit rapid un fenomen global.</p>
-                    <p>
-                        Dezvoltarea jocului a început la începutul anului 1979, în regia lui Toru Iwatani cu o echipă de nouă oameni. Iwatani a vrut să creeze un joc care să atragă atât femeile, cât și bărbații, deoarece majoritatea jocurilor video ale vremii aveau teme de război sau sport, dar și o audiență mai tânără, personajele din joc fiind drăguțe și colorate.
-                    </p>
+                    
+                    <div class="row">
+
+                        <div class="left">
+                            <p>Într-o lume în care jocurile video sunt la ordinea zilei, un joc video arcade a reușit să rămână în memoria colectivă a oamenilor pentru aproape patru decenii. Pac-Man, un joc creat de compania japoneză Namco, a fost lansat pentru prima dată în 1980 și a devenit rapid un fenomen global.</p>
+                            <p>
+                                Dezvoltarea jocului a început la începutul anului 1979, în regia lui Toru Iwatani cu o echipă de nouă oameni. Iwatani a vrut să creeze un joc care să atragă atât femeile, cât și bărbații, deoarece majoritatea jocurilor video ale vremii aveau teme de război sau sport, dar și o audiență mai tânără, personajele din joc fiind drăguțe și colorate.
+                            </p>
+                        </div>
+
+                        <div class="right img-container">
+                            <img src="../assets/pacman-arcade.jpg">
+                            <p>Poster cu Pac-man</p>
+                        </div>
+
+                    </div>
+
                     </section>
 
                 <section>
@@ -107,19 +120,31 @@
                         <li><p>Pinky - fantoma roz</p></li>
 
                         <p>Pinky încearcă să ajungă în fața ta, lucrând cu Blinky pentru a-l încolți pe Pac-Man.Pinky se comportă așa pentru că target tile-ul său nu este poziția lui Pac-Man. În schimb, target tile-ul este poziția lui Pac-man, la care adăugăm patru tile-uri Pac-în direcția în care Pac-Man se mișcă în prezent. (cu o singură excepție)</p>
-                        <p>Dacă Pac-Man se mișcă la stânga, target tile-ul lui Pinky va fi cu patru tile-ri la stânga lui Pac-Man. Dacă Pac-Man se mișcă la dreapta, targetul lui Pinky va fi patru la dreapta. Dacă Pac-Man se mișcă în jos, target tile-ul lui Pinky este cu patru piese mai jos. În cele din urmă, dacă Pac-Man se mișcă în sus, target tile-ul va fi cu patru tile-uri în sus <b>și</b> patru tile-uri la stânga. Acest rezultat interesant se datorează unei erori subtile în codul care calculează offset-ul lui Pinky față de Pac-Man. Această bucată de cod funcționează corect pentru celelalte trei cazuri, dar, atunci când Pac-Man se mișcă în sus, declanșează o eroare de overflow care include în mod eronat un offset la stânga egal ca distanță cu offsetul în sus.</p>
+                        
+                        <div class="row">
+
+                            <div class="left">
+                                <p>Dacă Pac-Man se mișcă la stânga, target tile-ul lui Pinky va fi cu patru tile-ri la stânga lui Pac-Man. Dacă Pac-Man se mișcă la dreapta, targetul lui Pinky va fi patru la dreapta. Dacă Pac-Man se mișcă în jos, target tile-ul lui Pinky este cu patru piese mai jos. În cele din urmă, dacă Pac-Man se mișcă în sus, target tile-ul va fi cu patru tile-uri în sus <b>și</b> patru tile-uri la stânga. Acest rezultat interesant se datorează unei erori subtile în codul care calculează offset-ul lui Pinky față de Pac-Man. Această bucată de cod funcționează corect pentru celelalte trei cazuri, dar, atunci când Pac-Man se mișcă în sus, declanșează o eroare de overflow care include în mod eronat un offset la stânga egal ca distanță cu offsetul în sus.</p>
+                            </div>
+                            <div class="right img-container">
+                                <img src="../assets/pacman-pinky.png">
+                                <p>Datorită acestui bug, Pinky nu poate ajunge în unele situații la Pac-man</p>
+                            </div>
+                        </div>
+
 
                         <li><p>Inky - fantoma albastră</p></li>
                         
-                        <p>Inky este cea mai imprevizibilă dintre fantome, deoarece uneori îl urmărește pe Pac-Man agresiv ca Blinky, iar alteori sare înaintea lui Pac-Man așa cum ar face Pinky. Acest fapt se datorează modului complex prin care este calculată poziția target tile-ului lui Inky, ce folosește atât poziția și direcția în care se mișcă Pac-Man, cât și poziția lui Blinky.</p>
                         <div class="row">
                             <div class="left">
+                            <p>Inky este cea mai imprevizibilă dintre fantome, deoarece uneori îl urmărește pe Pac-Man agresiv ca Blinky, iar alteori sare înaintea lui Pac-Man așa cum ar face Pinky. Acest fapt se datorează modului complex prin care este calculată poziția target tile-ului lui Inky, ce folosește atât poziția și direcția în care se mișcă Pac-Man, cât și poziția lui Blinky.</p>
                             <p>Pentru a determina ținta lui Inky, trebuie mai întâi să stabilim un offset de două tile-uri de la poziția lui Pac-Man în direcția în care acesta se mișcă. Acum imaginați-vă că desenați un vector de la Blinky până la tile-ul determinat anterior, iar apoi dublați lungimea vectorului. Target tile-ul lui Inky este tile-ul către care indică acest nou vector extins. Acest algoritm al lui Inky îl va ține departe de Pac-Man atunci când Blinky este departe de Pac-Man, dar pe măsură ce Blinky se apropie, se va apropia și Inky.</p>
     
                             </div>
     
                             <div class="img-container right">
                                 <img src="../assets/pacman-inky.png">
+                                <p>Target tile-ul lui Pinky este greu de determinat, deoarece acesta se modifică constant</p>
                             </div>
                         </div>
                 
@@ -134,7 +159,7 @@
 
                             <div class="img-container">
                                 <img src="../assets/pacman-clyde.png">
-                                <p>În acest caz, Clyde este blocat într-o buclă nesfârșită (atâta timp cât Pac-Man nu se mișcă). </p>
+                                <p>În acest caz, Clyde este blocat într-o buclă nesfârșită (atâta timp cât Pac-Man nu se mișcă) </p>
                             </div>
                         </div>
 

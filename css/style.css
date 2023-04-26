@@ -84,7 +84,25 @@ p {
 
 }
 
+ul
+{
+    list-style-type:  disclosure-closed;
+}
 
+ul > li::marker
+{
+    color: rgb(var(--main));
+}
+
+.link
+{
+    color: rgb(var(--main),0.8);
+}
+
+.link:hover
+{
+    color: rgb(var(--main));
+}
 
 body
 {
@@ -517,6 +535,14 @@ main{
 @media (max-width:800px){
     p{
         font-size: 1rem;
+    }
+
+    img{
+        width: 615px;
+    }
+    
+    img.wide{
+    width: 900px;
     }
 }
 
