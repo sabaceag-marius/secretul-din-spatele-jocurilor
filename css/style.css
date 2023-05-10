@@ -234,47 +234,7 @@ nav a.main.active
     
 }
 
-/*
 
-.dropdown li:hover{
-
-    background-color: rgba(var(--main),.4);
-
-}
-
-.dropdown li:hover a{
-
-    color: rgba(var(--bg),1);
-    
-}
-
-.dropdown li::after{
-
-    content: "";
-
-    background-color: rgb(var(--secondary));
-
-    top: 0;
-    left: 0;
-
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    z-index: -1;
-
-    transition: 250ms ease-in;
-
-    transform: scale(0);
-    transform-origin: top left;
-}
-
-.dropdown li:hover::after{
-
-    transform: scale(1);
-    transform-origin: bottom right;
-
-}*/
 
 .dropdown a
 {
