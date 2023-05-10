@@ -429,6 +429,11 @@ img.wide{
     max-width: 600px;
 }
 
+.game {
+
+    z-index: -1;
+}
+
 .card-container{
 
     display: flex;
@@ -442,6 +447,8 @@ img.wide{
 {
     border-radius: 1rem;
 }
+
+
 
 .card a{
     display: flex;
@@ -552,6 +559,15 @@ main{
     .game
     {
         transform: scale(80%);
+    }
+
+}
+
+@media (max-height:500px) {
+    
+    .game
+    {
+        transform: scale(70%);
     }
 
 }
