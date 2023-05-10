@@ -436,7 +436,13 @@ img.wide{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
 }
+.card img
+{
+    border-radius: 1rem;
+}
+
 .card a{
     display: flex;
     flex-direction: column;
@@ -463,7 +469,7 @@ img.wide{
     text-align: center;
 
     padding: .5rem 0 ;
-
+    border-radius: 1rem;
 }
 
 .card:hover .card-title{
@@ -533,6 +539,15 @@ main{
 }
 
 @media (max-width:1000px) {
+    
+    .game
+    {
+        transform: scale(80%);
+    }
+
+}
+
+@media (max-height:800px) {
     
     .game
     {
