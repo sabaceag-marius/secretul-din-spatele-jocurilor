@@ -509,7 +509,8 @@ main{
     
     .game
     {
-        width: 80%;
+        aspect-ratio: default;
+        width: 600px;
     }
 
 }
@@ -518,7 +519,8 @@ main{
     
     .game
     {
-        width: 80%;
+        aspect-ratio: default;
+        width: 600px;
     }
 
 }
@@ -527,8 +529,8 @@ main{
     
     .game
     {
-
-        width: 70%;
+        aspect-ratio: default;
+        width: 600px;
     }
 
 }
