@@ -509,7 +509,7 @@ main{
     
     .game
     {
-        aspect-ratio: default;
+        aspect-ratio: auto;
         width: 600px;
     }
 
@@ -519,7 +519,7 @@ main{
     
     .game
     {
-        aspect-ratio: default;
+        aspect-ratio: auto;
         width: 600px;
     }
 
@@ -529,7 +529,7 @@ main{
     
     .game
     {
-        aspect-ratio: default;
+        aspect-ratio: auto;
         width: 600px;
     }
 
