@@ -505,36 +505,6 @@ main{
 }
 }
 
-@media (max-width:1000px) {
-    
-    .game
-    {
-        aspect-ratio: auto;
-        width: 600px;
-    }
-
-}
-
-@media (max-height:800px) {
-    
-    .game
-    {
-        aspect-ratio: auto;
-        width: 600px;
-    }
-
-}
-
-@media (max-height:500px) {
-    
-    .game
-    {
-        aspect-ratio: auto;
-        width: 600px;
-    }
-
-}
-
 @media (max-width:800px){
     p{
         font-size: 1rem;
