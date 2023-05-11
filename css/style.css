@@ -436,7 +436,7 @@ img.wide{
     text-align: center;
 
     padding: .5rem 0 ;
-    border-radius: 1rem;
+    border-radius: 0 0 1rem 1rem;
 }
 
 .card:hover .card-title{
